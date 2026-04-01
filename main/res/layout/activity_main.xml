@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F9F5"
+    android:padding="16dp">
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="玉米病害检测"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#1A2B3C"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 图像获取模块 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="4dp"
+        android:radius="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#D9F7E1"
+                android:src="@android:drawable/ic_menu_camera"
+                android:contentDescription="相机图标"
+                android:padding="8dp"
+                android:radius="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图像获取"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1A2B3C"
+                android:layout_marginStart="12dp"/>
+
+        </LinearLayout>
+
+        <!-- 拍照/相册按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:spacing="16dp">
+
+            <Button
+                android:id="@+id/btn_camera"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:text="拍照上传"
+                android:textSize="18sp"
+                android:background="#D9F7E1"
+                android:textColor="#1A2B3C"
+                android:drawableTop="@android:drawable/ic_menu_camera"
+                android:drawablePadding="8dp"
+                android:radius="12dp"/>
+
+            <Button
+                android:id="@+id/btn_gallery"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:text="从相册选择"
+                android:textSize="18sp"
+                android:background="#F0F7FF"
+                android:textColor="#1A2B3C"
+                android:drawableTop="@android:drawable/ic_menu_gallery"
+                android:drawablePadding="8dp"
+                android:radius="12dp"/>
+
+        </LinearLayout>
+
+        <!-- 图片预览区 -->
+        <FrameLayout
+            android:id="@+id/fl_image_container"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:background="#E8E8E8"
+            android:radius="12dp">
+
+            <ImageView
+                android:id="@+id/iv_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_close_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="8dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- 开始检测按钮 -->
+    <Button
+        android:id="@+id/btn_detect"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="开始检测"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#2ECC71"
+        android:radius="20dp"
+        android:elevation="6dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 检测结果展示区 -->
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="检测结果将显示在这里"
+        android:textSize="16sp"
+        android:textColor="#666666"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:radius="12dp"
+        android:elevation="2dp"/>
+
+</LinearLayout>
